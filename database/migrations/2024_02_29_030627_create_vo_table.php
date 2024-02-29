@@ -19,8 +19,10 @@ return new class extends Migration
             $table->string('MoTa')->nullable();
             $table->string('Phai')->default('Phù hợp cả nam và nữ');
             $table->double('Gia');
+            $table->string('HinhAnh')->default('default.jpg');
             $table->boolean('HinhThuc')->default(true); //true = gia cong><mua si le
             $table->boolean('TrangThai')->default(true); // trang thai con ban hay khong
+
             $table->integer('SoLuongTon')->default(0);
             $table->foreignId('LoaiVo_id')->constrained('LoaiVo');
             $table->foreignId('CongTy_id')->constrained('CongTy');
