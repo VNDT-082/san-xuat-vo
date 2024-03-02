@@ -1,5 +1,5 @@
-<footer class="row m-auto bg-primary text-white">
-    <div class="col-xs-12 col-md-6 text-center">
+<footer class="row m-auto bg-primary text-white pt-3">
+    <div class="col-12 col-md-7 text-center">
         <strong>XƯỞNG GIA CÔNG TẤT - VỚ</strong>
         <br />
         <strong>CƠ SỞ SẢN XUẤT VỚ TIẾN PHÁT</strong>
@@ -10,7 +10,7 @@
         <br />Website: tatvo.net
         <br /> sanxuattatvo.com
     </div>
-    <div class="col-xs-12 col-md-6">
+    <div class="col-12 col-md-5">
         <h2>Đăng ký nhận tin mới</h2>
     </div>
     <div class="row">

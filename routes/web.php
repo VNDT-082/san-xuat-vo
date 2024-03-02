@@ -20,5 +20,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/loai-vo', [HomeController::class, 'index']);
+Route::get('/chi-tiet-san-pham/{id}', [HomeController::class, 'chi_tiet_san_pham'])->name('chi-tiet-san-pham');
+Route::get('/overview/{id}', [HomeController::class, 'overview'])->name('overview');
