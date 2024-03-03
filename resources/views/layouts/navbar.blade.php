@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Giới thiệu</a>
+                    <a class="nav-link" href="{{ route('gioi_thieu') }}">Giới thiệu</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -32,13 +32,13 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dịch vụ</a>
+                    <a class="nav-link" href="{{ route('dich_vu') }}">Dịch vụ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tin tức</a>
+                    <a class="nav-link" href="{{ route('tintuc_sukien') }}">Tin tức</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tuyển dụng</a>
+                    <a class="nav-link" href="{{ route('tuyen_dung') }}">Tuyển dụng</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Liên hệ</a>

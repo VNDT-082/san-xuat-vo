@@ -8,10 +8,10 @@
         <p class="fw-bold text-uppercase my-auto"> <i class="fa fa-home"></i> » {{ $vo->loaivo->TenLoai }}</p>
     </div>
     <div class="row px-5">
-        <div class="col-sx-12 col-md-3 text-center d-none d-md-block">
+        <div class="col-12 col-md-3 text-center d-none d-md-block">
             <h2 class="bg-danger text-danger text-white">DANH MỤC SẢN PHẨM</h1>
         </div>
-        <div class="col-sx-12 col-md-9">
+        <div class="col-12 col-md-9">
             <h4 class="p-1 fw-bold text-uppercase">{{ $vo->TenVo }}</h4>
             <div class="row">
                 <div class="col-sx-12 col-md-7">

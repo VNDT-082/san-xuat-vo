@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HinhAnh;
 use App\Models\LoaiVo;
+use App\Models\TinTuc;
 use App\Models\Vo;
 use Illuminate\Http\Request;
 
@@ -12,12 +13,14 @@ class HomeController extends Controller
     private $loaivos;
     private $vos;
     private $hinhanhs;
+    private $tintucs;
     public $data = [];
     public function __construct()
     {
         $this->loaivos = new LoaiVo();
         $this->vos = new Vo();
         $this->hinhanhs = new HinhAnh();
+        $this->tintucs = new TinTuc();
 
         $overview1 = ['title' => 'Sỉ - lẻ các loại tất', 'description' => 'Xưởng gia công tất (vớ) - Cơ sở sản xuất vớ Tiến Phát chuyên sỉ - lẻ các loại tất: Tất 3D của bé, tất 3D nữ, tất hoạt hình, tất ghép ngộ nghĩnh, tất trơn một màu, tất 7 ngày nam nữ.        Tất cổ ngắn vừa trên mắt cá chân chiều dài 24cm. Chất liệu cotton co giãn, có khả năng thấm hút mồ hôi nhanh.'];
         $overview2 = ['title' => 'Vớ trơn cổ ngắn - giá sỉ​, giá tốt', 'description' => 'Xưởng gia công tất (vớ) - Cơ sở sản xuất vớ Tiến Phát là cơ sở sản xuất các loại vớ, đặc biệt là vớ trơn cổ ngắn - giá sỉ. Chất liệu bền đẹp, mẫu mã đa dạng, nhiều chủng loại. Chúng tôi luôn tự tin mang đến cho các quý khách hàng có nhiều sự lựa chọn ưng ý nhất.'];
@@ -71,5 +74,39 @@ class HomeController extends Controller
         $this->data['overview_filename'] = 'h' . $overview_filename . '.jpg';
         $this->data['overview_id'] = $id;
         return view('clients.overview', $this->data);
+    }
+
+    public function tin_tuc()
+    {
+        $this->data['loaivos'] = $this->loaivos->get_all_different_default();
+        $this->data['title'] = 'tin tức - sự kiện';
+        $this->data['tintucs'] = $this->tintucs->get_all();
+        return view('clients.tintuc', $this->data);
+    }
+    public function chi_tiet_tin_tuc($id)
+    {
+        $this->data['loaivos'] = $this->loaivos->get_all_different_default();
+        $this->data['tintuc'] = $this->tintucs->get_one_by_id($id);
+        $this->data['title'] =  $this->data['tintuc']->TieuDe;
+        $this->data['toptintucs'] = $this->tintucs->get_top5_new();
+        return view('clients.chitiettintuc', $this->data);
+    }
+    public function dich_vu()
+    {
+        $this->data['loaivos'] = $this->loaivos->get_all_different_default();
+        $this->data['title'] = 'Dịch vụ của chúng tôi';
+        return view('clients.dichvu', $this->data);
+    }
+    public function gioi_thieu()
+    {
+        $this->data['loaivos'] = $this->loaivos->get_all_different_default();
+        $this->data['title'] = 'Về chúng tôi';
+        return view('clients.gioithieu', $this->data);
+    }
+    public function tuyen_dung()
+    {
+        $this->data['loaivos'] = $this->loaivos->get_all_different_default();
+        $this->data['title'] = 'Tuyển dụng';
+        return view('clients.tuyendung', $this->data);
     }
 }
