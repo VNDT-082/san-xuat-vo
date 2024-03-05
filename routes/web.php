@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoaiVoController;
 use App\Models\LoaiVo;
@@ -29,3 +30,12 @@ Route::get('chi-tiet-tin-tuc/{id}', [HomeController::class, 'chi_tiet_tin_tuc'])
 Route::get('dich-vu', [HomeController::class, 'dich_vu'])->name('dich_vu');
 Route::get('gioi-thieu', [HomeController::class, 'gioi_thieu'])->name('gioi_thieu');
 Route::get('tuyen-dung', [HomeController::class, 'tuyen_dung'])->name('tuyen_dung');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin_home');
+    Route::get('/loai-vo', [AdminController::class, 'loai_vo'])->name('admin_loai_vo');
+    Route::post('/post-loai-vo', [AdminController::class, 'post_loai_vo'])->name('admin_post_loai_vo');
+    Route::put('/update-loai-vo', [AdminController::class, 'put_loai_vo'])->name('admin_put_loai_vo');
+    Route::get('/delete-loai-vo/{id}', [AdminController::class, 'delete_loai_vo'])
+        ->name('admin_delete_loai_vo');
+});
